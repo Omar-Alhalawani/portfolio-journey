@@ -113,7 +113,14 @@ import { experiences, profile, projects, skills } from '../data/content';
         <a class="email-link" href={`mailto:${profile.email}`}>{profile.email} <Arrow /></a>
         <div class="contact-meta"><span>{profile.location}</span><a href={profile.github}>GitHub</a><a href={profile.linkedin}>LinkedIn</a><a href="/resume.pdf">Résumé</a></div>
       </div>
-      <footer>Designed and built for {profile.name} · © {new Date().getFullYear()}</footer>
+      <footer>
+        <p>Designed and built for {profile.name} · © {new Date().getFullYear()}</p>
+        <p class="credit-line">
+          Creative direction inspired by Omar Ibrahim's Dreamscape.
+          <a href="https://omaribrahim.me/">Explore his portfolio <Arrow /></a>
+          <a href="https://github.com/omaribrahim6/personal-portfolio">View his source <Arrow /></a>
+        </p>
+      </footer>
     </section>
   </main>
 

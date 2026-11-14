@@ -4,6 +4,15 @@ Omar Alhalawani's cinematic, single-page computer-systems portfolio. The page fo
 
 This is a separate project from `omar-alhalawani-portfolio`. The existing portfolio is a read-only content source and is not modified by this repository.
 
+## Credit and inspiration
+
+The continuous cinematic journey and chapter-based world were inspired by **Omar Ibrahim's Dreamscape portfolio**. Full creative credit for that original concept and reference implementation belongs to Omar Ibrahim.
+
+- Explore Omar Ibrahim's work: [omaribrahim.me](https://omaribrahim.me/)
+- View his portfolio source: [omaribrahim6/personal-portfolio](https://github.com/omaribrahim6/personal-portfolio)
+
+Please check out his work. This repository is an independent computer-systems interpretation built for Omar Alhalawani and does not claim authorship of Omar Ibrahim's original Dreamscape concept. See [CREDITS.md](CREDITS.md).
+
 ## Stack
 
 - Astro and TypeScript
