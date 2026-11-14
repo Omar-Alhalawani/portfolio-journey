@@ -26,7 +26,7 @@ const michroma = Michroma({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://portfolio-journey.vercel.app'),
+  metadataBase: new URL('https://portfolio-journey-beige.vercel.app'),
   title: 'Omar Alhalawani — Computer Systems Engineer',
   description:
     'Computer Systems Engineering student at Carleton University working across ASIC verification, RTL, embedded hardware, and research instrumentation.',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: 'Omar Alhalawani — Computer Systems Engineer',
     description:
       'Computer Systems Engineering student working across ASIC verification, RTL, embedded hardware, and research instrumentation.',
-    url: 'https://portfolio-journey.vercel.app',
+    url: 'https://portfolio-journey-beige.vercel.app',
     siteName: 'Omar Alhalawani',
     locale: 'en_CA',
     type: 'website',
