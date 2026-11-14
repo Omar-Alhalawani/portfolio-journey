@@ -1,35 +1,36 @@
-# Portfolio Journey
+# Omar Alhalawani — Portfolio Journey
 
-Omar Alhalawani's cinematic, single-page computer-systems portfolio. The page follows a signal through a dark silicon landscape: power-on, verification, physical builds, instrumentation, and handoff.
+A personal portfolio for Omar Alhalawani, a Computer Systems Engineering student at Carleton University. The site follows a seven-chapter journey from dusk to dawn through experience, hardware projects, milestones, skills, interests, and contact.
 
-This is a separate project from `omar-alhalawani-portfolio`. The existing portfolio is a read-only content source and is not modified by this repository.
+## Credit
 
-## Credit and inspiration
+This project deliberately adapts the design, page structure, interaction patterns, and substantial source code from **Omar Ibrahim’s Dreamscape portfolio**.
 
-The continuous cinematic journey and chapter-based world were inspired by **Omar Ibrahim's Dreamscape portfolio**. Full creative credit for that original concept and reference implementation belongs to Omar Ibrahim.
+- See Omar Ibrahim’s portfolio: [omaribrahim.me](https://omaribrahim.me/)
+- Review and support his original source: [omaribrahim6/personal-portfolio](https://github.com/omaribrahim6/personal-portfolio)
 
-- Explore Omar Ibrahim's work: [omaribrahim.me](https://omaribrahim.me/)
-- View his portfolio source: [omaribrahim6/personal-portfolio](https://github.com/omaribrahim6/personal-portfolio)
-
-Please check out his work. This repository is an independent computer-systems interpretation built for Omar Alhalawani and does not claim authorship of Omar Ibrahim's original Dreamscape concept. See [CREDITS.md](CREDITS.md).
+Omar Ibrahim deserves full credit for the original creative direction and implementation. Please check out his work. Personal content, identity assets, résumé, project data, and the teal/copper visual theme in this repository belong to Omar Alhalawani. See [CREDITS.md](CREDITS.md) and [NOTICE.md](NOTICE.md).
 
 ## Stack
 
-- Astro and TypeScript
-- Procedural Canvas 2D world with DOM-based content
-- CSS motion with reduced-motion support
-- No baked text in imagery or canvas
+- Next.js 16 and React 19
+- TypeScript
+- Framer Motion
+- WebGL shader sky and procedural 2D canvas terrain
+- Tailwind CSS
 
-## Run
+## Development
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Design rules
+Production checks:
 
-- All meaningful text remains selectable HTML.
-- Canvas and SVG illustrations are decorative and text-free.
-- The background carries atmosphere; signal animation stays inside engineering systems.
-- Motion stops or becomes instant under `prefers-reduced-motion`.
+```bash
+npm run lint
+npm run build
+```
+
+All portfolio content lives in `app/content.ts`.

@@ -2,23 +2,33 @@
   "name": "omar-alhalawani-portfolio-journey",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "engines": {
-    "node": ">=24.0.0"
+    "node": ">=20.9.0",
+    "npm": ">=10.0.0"
   },
   "scripts": {
-    "dev": "astro dev --ignore-lock",
-    "build": "astro build",
-    "preview": "astro preview --host 0.0.0.0",
-    "typecheck": "astro check"
+    "dev": "node scripts/dev.mjs",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@fontsource/inter": "^5.2.8",
-    "@fontsource/jetbrains-mono": "^5.2.8",
-    "astro": "7.3.8"
+    "framer-motion": "^13.1.0",
+    "lucide-react": "^1.33.0",
+    "next": "^16.3.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.9",
-    "typescript": "^5.9.3"
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.1",
+    "postcss": "^8.5.26",
+    "sharp": "^0.35.3",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
   }
 }

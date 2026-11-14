@@ -1,17 +1,14 @@
 # Credits
 
-## Omar Ibrahim — original creative inspiration
+## Omar Ibrahim — original design and source
 
-This portfolio's continuous scrolling journey, chapter-based world, and cinematic environmental storytelling were inspired by Omar Ibrahim's Dreamscape portfolio.
+This portfolio is a close structural adaptation of Omar Ibrahim’s Dreamscape portfolio. It reuses and modifies substantial portions of his public source code, including the seven-chapter composition, dusk-to-dawn scrolling experience, WebGL sky, procedural terrain, timeline and rail interactions, project windows, navigation, and typography system.
 
-Full creative credit for the original Dreamscape concept and reference implementation belongs to **Omar Ibrahim**.
+- Original portfolio: https://omaribrahim.me/
+- Original source: https://github.com/omaribrahim6/personal-portfolio
 
-- Portfolio: [https://omaribrahim.me/](https://omaribrahim.me/)
-- Source repository: [https://github.com/omaribrahim6/personal-portfolio](https://github.com/omaribrahim6/personal-portfolio)
-- GitHub: [https://github.com/omaribrahim6](https://github.com/omaribrahim6)
+Please visit his portfolio, review his repository, and check out the rest of his work. The original repository identifies its code as MIT licensed.
 
-Please visit his portfolio and explore his work.
+## Omar Alhalawani — adapted portfolio
 
-## This implementation
-
-`portfolio-journey` is an independently implemented computer-systems interpretation for Omar Alhalawani. Its silicon landscape, engineering content, project illustrations, typography, and signal system were developed for this repository. It does not claim authorship of Omar Ibrahim's original creative concept.
+Personal copy, résumé, portrait, experience, project information, links, and the teal/copper theme were prepared for Omar Alhalawani. None of Omar Ibrahim’s personal photographs, résumé files, or 3D character models are included.

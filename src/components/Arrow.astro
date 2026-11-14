@@ -1,9 +1,0 @@
----
-interface Props { direction?: 'out' | 'down' }
-const { direction = 'out' } = Astro.props;
----
-{direction === 'down' ? (
-  <svg class="link-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v10m0 0 4-4m-4 4L4 8" /></svg>
-) : (
-  <svg class="link-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5m-5 0h5v5" /></svg>
-)}

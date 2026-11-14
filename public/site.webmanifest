@@ -1,0 +1,10 @@
+{
+  "name": "Omar Alhalawani",
+  "short_name": "Omar",
+  "icons": [
+    { "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png" }
+  ],
+  "theme_color": "#071b1c",
+  "background_color": "#071b1c",
+  "display": "standalone"
+}

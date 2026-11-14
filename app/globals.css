@@ -1,0 +1,129 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Night */
+  --color-ink: #0e2425;
+  --color-night: #163435;
+  --color-indigo: #2b7275;
+  --color-ultra: #49abaf;
+  --color-peri: #99e1e3;
+  --color-lilac: #d7eeef;
+  /* Light */
+  --color-coral: #ecb474;
+  --color-ember: #cf9152;
+  --color-gold: #f6b455;
+  --color-cream: #f2ecdb;
+
+  --font-display: var(--font-fraunces), 'Iowan Old Style', Georgia, serif;
+  --font-sans: var(--font-hanken), system-ui, sans-serif;
+  --font-label: var(--font-michroma), var(--font-hanken), system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    /* The one margin everything hangs from: the header, the name, every title and every column. */
+    --edge: max(clamp(1.25rem, 3.4vw, 3rem), calc((100vw - 84rem) / 2));
+  }
+
+  html {
+    overflow-x: clip;
+    background: var(--color-night);
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    min-height: 100svh;
+    overflow-x: clip;
+    background: var(--color-night);
+    color: var(--color-cream);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Anchors land below the fixed header. */
+  [id] { scroll-margin-top: 5.5rem; }
+
+  ::selection { background: var(--color-coral); color: var(--color-ink); }
+
+  :where(a, button, input, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  button { cursor: pointer; }
+  button:disabled { cursor: default; }
+
+  html { scrollbar-color: #438083 var(--color-ink); }
+}
+
+@layer components {
+  /* Small wide capitals: the captions under the paintings. */
+  .label {
+    font-family: var(--font-label);
+    font-size: .65rem;
+    line-height: 1.5;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+  }
+
+  .measure { margin-inline: var(--edge); }
+
+  /* Text links: a rule that fills in from the left, and an arrow that leans the way it is going. */
+  .go {
+    display: inline-flex;
+    align-items: center;
+    gap: .4em;
+    padding-block: .3em;
+    background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+    transition: color .25s ease, background-size .35s ease;
+  }
+  .go svg { flex: none; transition: transform .3s cubic-bezier(.2, .7, .2, 1); }
+  .go:hover, .go:focus-visible { color: var(--accent, var(--color-coral)); }
+  .go:hover svg, .go:focus-visible svg { transform: translate(2px, -2px); }
+  .go[data-down]:hover svg, .go[data-down]:focus-visible svg { transform: translateY(3px); }
+
+  /* Filters: plain words, the chosen one underlined with light. */
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem 1.6rem;
+  }
+  .filters button {
+    position: relative;
+    padding: .55rem 0;
+    color: inherit;
+    opacity: .58;
+    transition: opacity .25s ease, color .25s ease;
+  }
+  .filters button small { margin-left: .5em; font-size: 1em; opacity: .6; }
+  .filters button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: .2rem;
+    height: 1px;
+    background: var(--accent, var(--color-coral));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s cubic-bezier(.2, .7, .2, 1);
+  }
+  .filters button:hover { opacity: 1; }
+  .filters button[aria-pressed='true'] { opacity: 1; color: var(--accent, var(--color-coral)); }
+  .filters button[aria-pressed='true']::after { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
