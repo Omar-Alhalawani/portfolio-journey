@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SystemIllustration from '../components/SystemIllustration.astro';
+import Arrow from '../components/Arrow.astro';
+import { experiences, profile, projects, skills } from '../data/content';
+---
+<Layout title={`${profile.name} — ${profile.role}`} description={profile.intro}>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas id="silicon-world" aria-hidden="true"></canvas>
+  <div class="world-vignette" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="Omar Alhalawani, back to top"><span></span>Omar Alhalawani</a>
+    <nav aria-label="Primary navigation">
+      <a href="#trajectory">Experience</a>
+      <a href="#systems">Systems</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="#contact">Contact</a>
+      <a href="/resume.pdf">Résumé <Arrow /></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="chapter hero" id="home" data-scene="0">
+      <div class="hero-copy reveal">
+        <p class="script-line">hello, I build at the boundary of</p>
+        <h1><span>logic</span><span>& hardware.</span></h1>
+        <p class="hero-role">{profile.name} · {profile.role}</p>
+        <p class="hero-intro">{profile.intro}</p>
+        <div class="hero-links">
+          <a href="#systems">Explore my work <Arrow direction="down" /></a>
+          <a href="/resume.pdf">Résumé <Arrow /></a>
+          <a href={profile.github}>GitHub <Arrow /></a>
+          <a href={profile.linkedin}>LinkedIn <Arrow /></a>
+        </div>
+      </div>
+      <div class="chapter-mark"><span>LAYER I</span><strong>POWER-ON</strong></div>
+    </section>
+
+    <section class="chapter trajectory" id="trajectory" data-scene="1">
+      <div class="section-head reveal">
+        <p class="layer">LAYER II · THE PIPELINE</p>
+        <h2>From specification<br />to measured behavior.</h2>
+        <p>The work that shaped how I reason about reliable systems.</p>
+      </div>
+      <div class="experience-shell reveal">
+        <div class="pipeline" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="experience-list">
+          {experiences.map((item, index) => (
+            <article class="experience-card">
+              <div class="experience-meta"><span>0{index + 1}</span><time>{item.period}</time></div>
+              <div>
+                <p class="company">{item.company} · {item.team}</p>
+                <h3>{item.role}</h3>
+                <p>{item.summary}</p>
+                <ul>{item.points.map(point => <li>{point}</li>)}</ul>
+                <p class="tool-line">{item.tools.join(' / ')}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter systems" id="systems" data-scene="2">
+      <div class="section-head reveal">
+        <p class="layer">LAYER III · THE FAB</p>
+        <h2>Selected systems.</h2>
+        <p>Each project is shown as a system, with the claim tied to evidence.</p>
+      </div>
+      <div class="project-grid">
+        {projects.map(project => (
+          <article class="project-card reveal">
+            <div class="project-visual"><SystemIllustration kind={project.signal} /></div>
+            <div class="project-index">Nº {project.index} <span>{project.proof}</span></div>
+            <h3>{project.title}</h3>
+            <p class="project-category">{project.category}</p>
+            <p>{project.description}</p>
+            <p class="tool-line">{project.tools.join(' / ')}</p>
+            {project.href ? <a class="project-link" href={project.href}>View source <Arrow /></a> : <span class="project-link muted">Internal project</span>}
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="chapter toolkit" id="toolkit" data-scene="3">
+      <div class="section-head reveal">
+        <p class="layer">LAYER IV · SIGNAL CHAIN</p>
+        <h2>Tools, with context.</h2>
+        <p>What I use and the engineering work it supports.</p>
+      </div>
+      <div class="skill-rack reveal">
+        {skills.map((skill, index) => (
+          <article>
+            <span>0{index + 1}</span>
+            <div><h3>{skill.title}</h3><p>{skill.detail}</p></div>
+            <p class="tool-line">{skill.tools}</p>
+          </article>
+        ))}
+      </div>
+      <aside class="repair-note reveal">
+        <p class="layer">THE BENCH</p>
+        <h3>Hardware becomes real when it fails.</h3>
+        <p>Through Alhalawani Tech Solutions, I diagnose and repair phones, tablets, and laptops—component replacement, soldering, software faults, and practical repair testing.</p>
+      </aside>
+    </section>
+
+    <section class="chapter contact" id="contact" data-scene="4">
+      <div class="contact-copy reveal">
+        <p class="layer">LAYER V · HANDOFF</p>
+        <h2>Build the next<br />system together.</h2>
+        <p>Open to engineering conversations, hardware and verification work, and ambitious systems that need careful thinking.</p>
+        <a class="email-link" href={`mailto:${profile.email}`}>{profile.email} <Arrow /></a>
+        <div class="contact-meta"><span>{profile.location}</span><a href={profile.github}>GitHub</a><a href={profile.linkedin}>LinkedIn</a><a href="/resume.pdf">Résumé</a></div>
+      </div>
+      <footer>Designed and built for {profile.name} · © {new Date().getFullYear()}</footer>
+    </section>
+  </main>
+
+  <script>
+    import '../scripts/world';
+  </script>
+</Layout>
